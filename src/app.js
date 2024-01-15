@@ -7,17 +7,25 @@ app.get("", (req, res) => {
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help page");
+  res.send([
+    {
+      name: "Andrew",
+    },
+    { name: "Sarah" },
+  ]);
 });
 
 app.get("/about", (req, res) => {
-  res.send("About page");
+  res.send("<title>About</title>");
 });
 
-app.get("weather", (req, res) => {
-  res.send("Weather page");
+app.get("/weather", (req, res) => {
+  res.send({
+    forecast: "It's 0°C outside.",
+    location: "Your location is Karlsruhe.",
+  });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
+app.listen(2000, () => {
+  console.log("Server is up on port 2000");
 });
