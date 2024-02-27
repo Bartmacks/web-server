@@ -1,0 +1,27 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "npm install"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "test": {
+      "name": "test",
+      "command": "npm run test"
+    },
+    "npm i nodemon cors habs path": {
+      "name": "npm i nodemon cors habs path",
+      "command": "npm i nodemon cors habs path",
+      "runAtStart": true
+    },
+    "npm i nodemon cors hbs path": {
+      "name": "npm i nodemon cors hbs path",
+      "command": "npm i nodemon cors hbs path",
+      "runAtStart": true
+    }
+  }
+}
