@@ -14,14 +14,13 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.message === "") {
       callback("This place doesnt exist. Please try another one.", undefined);
     } else {
-      callback(undefined,
-        body.current.weather_descriptions[0] +
-          ". It is currently " +
-          body.current.temperature +
-          " degrees out. It feels like " +
-          body.current.feelslike +
-          " degrees out.",
-      );
+      callback(undefined,{
+        location: body.current.location,
+        w_desc: body.current.weather_descriptions[0],
+        w_temp: body.current.temperature,
+        w_feels: body.current.feelslike ,
+        imgSrc: body.current.weather_icons,
+      });
     }
   });
 };

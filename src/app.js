@@ -57,11 +57,14 @@ app.get("/weather", (req, res) => {
         if (error) {
           return res.send(error);
         }
-
         res.send({
-          forecast: forecastData,
+          forecast: forecastData.w_desc,
           location,
           address: req.query.address,
+          w_desc: forecastData.w_desc,
+          w_temp: forecastData.w_temp,
+          w_feels: forecastData.w_feels,
+          imgSrc: forecastData.imgSrc,
         });
       });
     });

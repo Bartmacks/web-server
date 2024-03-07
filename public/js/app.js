@@ -4,6 +4,10 @@ const weatherform = document.querySelector("form");
 const search = document.querySelector("input");
 const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
+const weatherPic =   document.getElementById("weatherIcon");
+const staticText = document.querySelectorAll(".staticText")
+
+//staticText.forEach(el => el.style.visibility = "hidden");
 
 weatherform.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -16,8 +20,16 @@ weatherform.addEventListener("submit", (e) => {
       if (data.error) {
         messageOne.textContent = data.error;
       } else {
-        messageOne.textContent = data.location;
-        messageTwo.textContent = data.forecast;
+        messageOne.textContent = "";
+        messageOne.textContent += data.location;
+        messageTwo.textContent += "It is currently ";
+        messageTwo.textContent += data.w_temp;
+        messageTwo.textContent += " degrees out. It feels like ";
+        messageTwo.textContent += data.w_feels
+        messageTwo.textContent += "  degrees."
+        weatherPic.src = data.imgSrc;
+        
+        //staticText.forEach(el => el.style.visibility = "visible");
       }
     });
   });

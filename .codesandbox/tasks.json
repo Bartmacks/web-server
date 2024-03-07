@@ -13,14 +13,15 @@
       "name": "test",
       "command": "npm run test"
     },
-    "npm i nodemon cors habs path": {
-      "name": "npm i nodemon cors habs path",
-      "command": "npm i nodemon cors habs path",
-      "runAtStart": true
-    },
+
     "npm i nodemon cors hbs path": {
       "name": "npm i nodemon cors hbs path",
       "command": "npm i nodemon cors hbs path",
+      "runAtStart": true
+    },
+    "n": {
+      "name": "n",
+      "command": "npm i nodemon --save-dev",
       "runAtStart": true
     }
   }
